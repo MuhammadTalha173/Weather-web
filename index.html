@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Weather App 🌤️</title>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+
+<div class="weather-card" id="weatherCard">
+  <div class="city" id="cityName">Select a City</div>
+  <div class="weather-icon" id="weatherIcon">🌤️</div> 
+  <div class="temp" id="temp">--°C</div>
+  <div class="details" id="description">Weather Details</div>
+  <div class="details" id="humidity">Humidity: --%</div>
+
+  <input type="text" id="cityInput" placeholder="Enter city" />
+  <button onclick="getWeather()">Get Weather</button>
+  <button onclick="getLocation()">Use My Location</button>
+  <div class="error" id="error"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

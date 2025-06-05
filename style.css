@@ -1,0 +1,130 @@
+/* Body - dark theme full screen center alignment */
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000000;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #e1e1e1;
+}
+
+/* Main weather card */
+.weather-card {
+  background: #fcfcfc;
+  border-radius: 20px;
+  width: 320px;
+  padding: 25px 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.8);
+  text-align: center;
+  color: #e1e1e1;
+  transition: background-image 0.5s ease-in-out;
+}
+
+/* City Name */
+.city {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  color: #000000;
+  
+}
+
+/* Weather Icon */
+.weather-icon {
+  font-size: 60px;
+  margin: 12px 0;
+  user-select: none;
+  filter: drop-shadow(0 0 4px #000000);
+}
+
+/* Temperature */
+.temp {
+  font-size: 44px;
+  font-weight: 700;
+  margin: 8px 0 12px;
+  color: #000000;
+  text-shadow: #222;
+  
+}
+
+/* Details text */
+.details {
+  font-size: 14px;
+  margin-top: 6px;
+  color: #000000;
+  text-transform: capitalize;
+  
+}
+
+/* Input field styling */
+#cityInput {
+  width: 90%;
+  padding: 12px 3px;
+  font-size: 14px;
+  border-radius: 40px;
+  border: 3px solid #333;
+  outline: none;
+  margin-top: 20px;
+  background-color: #22222200;
+  color: #000000;
+  transition: border-color 0.3s ease;
+}
+
+#cityInput::placeholder {
+    text-align: center;
+  color: #666;
+}
+
+#cityInput:focus {
+  border-color: #58a6ff;
+}
+
+/* Container for buttons to align side by side */
+.weather-card > button {
+  width: 48%;
+  padding: 14px 0;
+  margin: 20px 1% 0 1%;
+  border: none;
+  border-radius: 20px;
+  background: #238636;
+  color: #c9d1d9;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 14px;
+  box-shadow: none; /* shadow removed */
+  transition: background 0.3s ease;
+}
+
+.weather-card > button:hover {
+  background: #2ea043;
+  color: #ffffff;
+  box-shadow: none;
+}
+
+/* Error message */
+.error {
+  margin-top: 15px;
+  color: #ff6b6b;
+  font-weight: 700;
+  text-shadow: 0 0 6px #ff6b6b;
+  min-height: 24px;
+  text-align: center;
+}
+
+/* Responsive tweaks */
+@media (max-width: 400px) {
+  .weather-card {
+    width: 90vw;
+    padding: 20px 15px;
+  }
+  .weather-card > button {
+    width: 100%;
+    margin: 15px 0 0 0;
+  }
+  #cityInput {
+    margin-top: 15px;
+  }
+}
