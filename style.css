@@ -12,20 +12,21 @@ body {
 
 /* Main weather card */
 .weather-card {
-  
-  background-size: cover;
-  background-position: center;
-
-
-  background: #fcfcfc;
+  background: #1e1e1e;
   border-radius: 20px;
   width: 320px;
   padding: 25px 20px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.8);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
   text-align: center;
   color: #e1e1e1;
   transition: background-image 0.5s ease-in-out;
+
+  /* ✅ These three are required to make background image visible */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
 
 /* City Name */
 .city {
