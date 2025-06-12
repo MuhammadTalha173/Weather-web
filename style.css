@@ -12,6 +12,11 @@ body {
 
 /* Main weather card */
 .weather-card {
+  
+  background-size: cover;
+  background-position: center;
+
+
   background: #fcfcfc;
   border-radius: 20px;
   width: 320px;
