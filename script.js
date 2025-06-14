@@ -9,32 +9,34 @@ async function getWeather() {
   fetchWeather(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`);
 }
 
+
+
 async function fetchWeather(url) {
   document.getElementById('error').textContent = "";
   try {
     const response = await fetch(url);
     if (!response.ok) throw new Error("City not found");
     const data = await response.json();
+
     updateUI(data);
   } catch (err) {
     document.getElementById('error').textContent = err.message;
   }
 }
-
 async function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(position => {
-      const lat = position.coords.latitude;
+const lat = position.coords.latitude;
       const lon = position.coords.longitude;
-      fetchWeather(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`);
+ fetchWeather(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`);
+
     }, () => {
       document.getElementById('error').textContent = "Location access denied";
     });
   } else {
-    document.getElementById('error').textContent = "Geolocation not supported";
+document.getElementById('error').textContent = "Geolocation not supported";
   }
 }
-
 function updateUI(data) {
   const cityName = `${data.name}, ${data.sys.country}`;
   const tempValue = Math.round(data.main.temp);
@@ -65,20 +67,17 @@ function updateUI(data) {
   document.getElementById('weatherIcon').textContent = icon;
 
   const card = document.getElementById('weatherCard');
-  
-  // ✅ New Professional Backgrounds (Dark Theme Style)
-  let bgImage = 'url(https://images.unsplash.com/photo-1603312448610-53c98c0f6771?auto=format&fit=crop&w=800&q=80)'; // default
-
+  let bgImage = 'url(https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80)';
   if (weatherMain.includes('cloud')) {
-    bgImage = 'url(https://images.unsplash.com/photo-1610878180933-ff34bb79e2f2?auto=format&fit=crop&w=800&q=80)'; // clouds
+    bgImage = 'url(https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80)';
   } else if (weatherMain.includes('rain')) {
-    bgImage = 'url(https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=800&q=80)'; // rain
+    bgImage = 'url(https://images.unsplash.com/photo-1527766833261-b09c3163a791?auto=format&fit=crop&w=800&q=80)';
   } else if (weatherMain.includes('clear')) {
-    bgImage = 'url(https://images.unsplash.com/photo-1605559424843-3bdf6ba5cfd9?auto=format&fit=crop&w=800&q=80)'; // clear sky
+    bgImage = 'url(https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80)';
   } else if (weatherMain.includes('snow')) {
-    bgImage = 'url(https://images.unsplash.com/photo-1608889179144-79a5e42870fe?auto=format&fit=crop&w=800&q=80)'; // snow
+    bgImage = 'url(https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=800&q=80)';
   } else if (weatherMain.includes('thunderstorm')) {
-    bgImage = 'url(https://images.unsplash.com/photo-1618005198919-d3d4b5c30f29?auto=format&fit=crop&w=800&q=80)'; // thunder
+    bgImage = 'url(https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=800&q=80)';
   }
 
   card.style.backgroundImage = bgImage;
